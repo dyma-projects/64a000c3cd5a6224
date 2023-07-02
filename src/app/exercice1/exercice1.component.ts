@@ -11,4 +11,8 @@ export class Exercice1Component implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  public changeCounter(mustAdd: number): void {
+    this.result = this.result + mustAdd;
+  }
 }

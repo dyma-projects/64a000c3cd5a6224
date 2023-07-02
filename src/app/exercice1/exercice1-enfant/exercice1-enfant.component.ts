@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-exercice1-enfant',
   templateUrl: './exercice1-enfant.component.html',
-  styleUrls: ['./exercice1-enfant.component.css']
+  styleUrls: ['./exercice1-enfant.component.css'],
 })
 export class Exercice1EnfantComponent implements OnInit {
+  @Output('changeCounter') private updateCounter: EventEmitter<1 | -1> =
+    new EventEmitter();
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
+  ngOnInit(): void {}
+
+  public changeCounter(mustAdd: 1 | -1): void {
+    this.updateCounter.emit(mustAdd);
   }
-
 }
