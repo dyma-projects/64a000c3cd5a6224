@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-exercice1-enfant',
@@ -6,6 +6,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./exercice1-enfant.component.css'],
 })
 export class Exercice1EnfantComponent implements OnInit {
+  @Input() public counterValue: number;
   @Output('changeCounter') private updateCounter: EventEmitter<1 | -1> =
     new EventEmitter();
 
